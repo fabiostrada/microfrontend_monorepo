@@ -34,3 +34,13 @@ sharedMappings.register(
 import { LanguageConfig, SharedService } from 'shared';
 ```
 Non usare mai il percorso fisico, altrimenti la condivisione ( e quindi la natura singleton dei servizi) non avviene.
+
+4. Definire i servizi angular presenti nella libreria shared, tramite factory, in modo tale da realizzare una natura singleton del servizio stesso:
+```
+@Injectable({
+  deps: [[new Optional(), new SkipSelf(), SharedService]],
+  providedIn: 'root',
+  useFactory: (instance: SharedService | null) => instance || new SharedService(),
+})
+export class SharedService {
+```
