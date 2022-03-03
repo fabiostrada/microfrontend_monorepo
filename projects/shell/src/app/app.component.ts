@@ -8,14 +8,17 @@ import { SharedService } from 'shared';
 })
 export class AppComponent implements OnInit {
   
+  public value!: string;
+
   constructor(private sharedService: SharedService) {
 
   }
 
   ngOnInit(): void {
       this.sharedService.getLanguage()
-          .subscribe(language => {
-              console.log('Change language', language);
+          .subscribe(value => {
+              console.log('Value change', value);
+              this.value = value;
           });
   }
   
