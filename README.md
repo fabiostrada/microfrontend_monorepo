@@ -45,7 +45,7 @@ Non usare mai il percorso fisico, altrimenti la condivisione ( e quindi la natur
 })
 export class SharedService {
 ```
-Se il servizio SharedService accetta nel suo costruttore altri parametri, allora bisognerà modificare la factory. Infatti, supponiamo che accetti un HttpClient come parametro, allora avremo:
+Se il servizio SharedService accetta nel suo costruttore altri parametri, allora bisognerà modificare la factory e i deps. Infatti, supponiamo che accetti un HttpClient come parametro, allora avremo:
 ```
 @Injectable({
   deps: [[new Optional(), new SkipSelf(), SharedService], HttpClient],
