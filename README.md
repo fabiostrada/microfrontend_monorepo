@@ -4,10 +4,11 @@ Implementazione microfrontend con libreria condivisa
 
 ## Architrettura
 
-Abbiamo 3 componenti:
+Abbiamo 4 componenti:
 
 - Shell (Microfrontend)
 - Dashboard (Microfrontend)
+- Admin (Microfrontend)
 - Shared (Libreria condivisa contenente servizio shared)
 
 ## Note sulla condivisione delle librerie
